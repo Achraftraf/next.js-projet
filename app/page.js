@@ -14,3 +14,6 @@ const HomePage = () => {
 }
 
 export default HomePage
+
+
+// rafce  -> this is for inicial the page
