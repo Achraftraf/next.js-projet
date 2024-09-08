@@ -1,16 +1,14 @@
 // Corrected path for db.ts
-import prisma from '../app/utils/db';
+// import prisma from '../app/utils/db';
+import {getAllTasks} from '../app/utils/actions';
 
 
 import Link from 'next/link';
 import DeleteForm from './DeleteForm';
 
 const TaskList = async () => {
-  const tasks = await prisma.task.findMany({
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
+  const tasks = await getAllTasks();
+
   if (tasks.length === 0)
     return <h2 className='mt-8 font-medium text-lg'>No tasks to show</h2>;
   return (
