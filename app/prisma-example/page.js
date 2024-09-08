@@ -1,5 +1,10 @@
 import React from "react";
-import prisma from "@/utils/db";
+// import prisma from "@/utils/db";
+// import prisma from "@/utils/db";
+import prisma from '../utils/db';
+
+
+
 
 // Function to handle Prisma tasks (fetch and create)
 const prismaHandlers = async () => {
