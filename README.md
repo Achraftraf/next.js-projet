@@ -44,7 +44,7 @@ npm run dev
 const HomePage = () => {
   return (
     <div>
-      <h1 className='text-7xl'>HomePage</h1>
+      <h1 className="text-7xl">HomePage</h1>
     </div>
   );
 };
@@ -64,7 +64,7 @@ app/about/page.js
 const AboutPage = () => {
   return (
     <div>
-      <h1 className='text-7xl'>AboutPage</h1>
+      <h1 className="text-7xl">AboutPage</h1>
     </div>
   );
 };
@@ -78,13 +78,13 @@ export default AboutPage;
   home page
 
 ```js
-import Link from 'next/link';
+import Link from "next/link";
 
 const HomePage = () => {
   return (
     <div>
-      <h1 className='text-7xl'>HomePage</h1>
-      <Link href='/about' className='text-2xl'>
+      <h1 className="text-7xl">HomePage</h1>
+      <Link href="/about" className="text-2xl">
         about page
       </Link>
     </div>
@@ -100,7 +100,7 @@ export default HomePage;
 
 ```js
 const AboutInfoPage = () => {
-  return <h1 className='text-7xl'>AboutInfoPage</h1>;
+  return <h1 className="text-7xl">AboutInfoPage</h1>;
 };
 export default AboutInfoPage;
 ```
@@ -147,19 +147,19 @@ module.exports = {
 - layouts in a route are nested by default. Each parent layout wraps child layouts below it using the React children prop.
 
 ```js
-import { Inter } from 'next/font/google';
-import './globals.css';
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Next.js Tutorial',
-  description: 'Build awesome stuff with Next.js!',
+  title: "Next.js Tutorial",
+  description: "Build awesome stuff with Next.js!",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
@@ -181,29 +181,29 @@ export default function RootLayout({ children }) {
 components/Navbar
 
 ```js
-import Link from 'next/link';
+import Link from "next/link";
 
 const links = [
-  { href: '/client', label: 'client' },
-  { href: '/drinks', label: 'drinks' },
-  { href: '/tasks', label: 'tasks' },
-  { href: '/query', label: 'react-query' },
+  { href: "/client", label: "client" },
+  { href: "/drinks", label: "drinks" },
+  { href: "/tasks", label: "tasks" },
+  { href: "/query", label: "react-query" },
 ];
 
 const Navbar = () => {
   return (
-    <nav className='bg-base-300 py-4'>
-      <div className='navbar px-8 max-w-6xl mx-auto flex-col sm:flex-row'>
+    <nav className="bg-base-300 py-4">
+      <div className="navbar px-8 max-w-6xl mx-auto flex-col sm:flex-row">
         <li>
-          <Link href='/' className='btn btn-primary'>
+          <Link href="/" className="btn btn-primary">
             Next.js
           </Link>
         </li>
-        <ul className='menu menu-horizontal md:ml-8'>
+        <ul className="menu menu-horizontal md:ml-8">
           {links.map((link) => {
             return (
               <li key={link.href}>
-                <Link href={link.href} className=' capitalize'>
+                <Link href={link.href} className=" capitalize">
                   {link.label}
                 </Link>
               </li>
@@ -221,25 +221,25 @@ export default Navbar;
 app/layout
 
 ```js
-import { Inter } from 'next/font/google';
-import './globals.css';
+import { Inter } from "next/font/google";
+import "./globals.css";
 
 // alias
-import Navbar from '@/components/Navbar';
+import Navbar from "@/components/Navbar";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Next.js Tutorial',
-  description: 'Build awesome stuff with Next.js!',
+  title: "Next.js Tutorial",
+  description: "Build awesome stuff with Next.js!",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className='bg-base-200'>
+    <html lang="en" className="bg-base-200">
       <body className={inter.className}>
         <Navbar />
-        <main className='px-8 py-20 max-w-6xl mx-auto '>{children}</main>
+        <main className="px-8 py-20 max-w-6xl mx-auto ">{children}</main>
       </body>
     </html>
   );
@@ -286,13 +286,13 @@ Benefits :
 ### Home Page
 
 ```js
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <h1 className='text-5xl mb-8 font-bold'>Next.js Tutorial</h1>
-      <Link href='/client' className='btn btn-accent'>
+      <h1 className="text-5xl mb-8 font-bold">Next.js Tutorial</h1>
+      <Link href="/client" className="btn btn-accent">
         get started
       </Link>
     </div>
@@ -304,14 +304,14 @@ export default function Home() {
 
 ```js
 // try without
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 const Client = () => {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <h1 className='text-7xl font-bold mb-4 '>{count}</h1>
-      <button className='btn btn-primary' onClick={() => setCount(count + 1)}>
+      <h1 className="text-7xl font-bold mb-4 ">{count}</h1>
+      <button className="btn btn-primary" onClick={() => setCount(count + 1)}>
         increase
       </button>
     </div>
@@ -327,7 +327,7 @@ export default Client;
 - Next.js extends the native Web fetch() API to allow each request on the server to set its own persistent caching semantics.
 
 ```js
-const url = 'someUrl';
+const url = "someUrl";
 
 const ServerComponent = async () => {
   const response = await fetch(url);
@@ -335,7 +335,7 @@ const ServerComponent = async () => {
   console.log(data);
   return (
     <div>
-      <h1 className='text-7xl'>DrinksPage</h1>
+      <h1 className="text-7xl">DrinksPage</h1>
     </div>
   );
 };
@@ -351,7 +351,7 @@ export default ServerComponent;
 app/drinks/page.js
 
 ```js
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
 
 const DrinksPage = async () => {
   const response = await fetch(url);
@@ -359,7 +359,7 @@ const DrinksPage = async () => {
   console.log(data);
   return (
     <div>
-      <h1 className='text-7xl'>DrinksPage</h1>
+      <h1 className="text-7xl">DrinksPage</h1>
     </div>
   );
 };
@@ -374,7 +374,7 @@ The special file loading.js helps you create meaningful Loading UI with React Su
 
 ```js
 const loading = () => {
-  return <span className='loading'></span>;
+  return <span className="loading"></span>;
 };
 export default loading;
 ```
@@ -395,7 +395,7 @@ const DrinksPage = async () => {
   console.log(data);
   return (
     <div>
-      <h1 className='text-7xl'>DrinksPage</h1>
+      <h1 className="text-7xl">DrinksPage</h1>
     </div>
   );
 };
@@ -410,7 +410,7 @@ The error.js file convention allows you to gracefully handle unexpected runtime 
 - 'use client'
 
 ```js
-'use client';
+"use client";
 const error = () => {
   return <div>there was an error...</div>;
 };
@@ -421,7 +421,7 @@ export default error;
 
 ```js
 // modify the url
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.phps?f=a';
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.phps?f=a";
 
 const fetchDrinks = async () => {
   // just for demo purposes
@@ -429,7 +429,7 @@ const fetchDrinks = async () => {
   const response = await fetch(url);
   // throw error
   if (!response.ok) {
-    throw new Error('Failed to fetch drinks...');
+    throw new Error("Failed to fetch drinks...");
   }
   const data = await response.json();
   return data;
@@ -451,9 +451,9 @@ const fetchDrinks = async () => {
 ```js
 export default function DrinksLayout({ children }) {
   return (
-    <div className='max-w-xl '>
-      <div className='mockup-code mb-8'>
-        <pre data-prefix='$'>
+    <div className="max-w-xl ">
+      <div className="mockup-code mb-8">
+        <pre data-prefix="$">
           <code>npx create-next-app@latest nextjs-tutorial</code>
         </pre>
       </div>
@@ -473,7 +473,7 @@ const page = ({ params }) => {
 
   return (
     <div>
-      <h1 className='text-7xl'>{params.id}</h1>
+      <h1 className="text-7xl">{params.id}</h1>
     </div>
   );
 };
@@ -494,16 +494,16 @@ export default page;
 DrinksList.jsx
 
 ```js
-import Link from 'next/link';
+import Link from "next/link";
 
 const DrinksList = ({ drinks }) => {
   return (
-    <ul className='menu menu-vertical pl-0'>
+    <ul className="menu menu-vertical pl-0">
       {drinks.map((drink) => (
         <li key={drink.idDrink}>
           <Link
             href={`/drinks/${drink.idDrink}`}
-            className='text-xl font-medium'
+            className="text-xl font-medium"
           >
             {drink.strDrink}
           </Link>
@@ -518,15 +518,15 @@ export default DrinksList;
 app/drinks/page.js
 
 ```js
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
-import DrinksList from '@/components/DrinksList';
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
+import DrinksList from "@/components/DrinksList";
 const fetchDrinks = async () => {
   // just for demo purposes
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error('Failed to fetch drinks...');
+    throw new Error("Failed to fetch drinks...");
   }
   const data = await response.json();
   return data;
@@ -550,7 +550,7 @@ export default DrinksPage;
 - hint:params object
 
 ```js
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 ```
 
 ## Render Single Drink
@@ -558,14 +558,14 @@ const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 drinks/[id]/page.js
 
 ```js
-import Link from 'next/link';
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+import Link from "next/link";
+const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 const getSingleDrink = async (id) => {
   const res = await fetch(`${url}${id}`);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch drink...');
+    throw new Error("Failed to fetch drink...");
   }
   return res.json();
 };
@@ -576,10 +576,10 @@ const SingleDrink = async ({ params }) => {
   const imgSrc = data?.drinks[0]?.strDrinkThumb;
   return (
     <div>
-      <Link href='/drinks' className='btn btn-primary mt-8 mb-12'>
+      <Link href="/drinks" className="btn btn-primary mt-8 mb-12">
         back to drinks
       </Link>
-      <h1 className='text-4xl mb-8'>{title}</h1>
+      <h1 className="text-4xl mb-8">{title}</h1>
     </div>
   );
 };
@@ -601,11 +601,11 @@ The Next.js Image component extends the HTML <img> element with features for aut
 drinks[id]/page.js
 
 ```js
-import Link from 'next/link';
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+import Link from "next/link";
+const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
-import drinkImg from './drink.jpg';
-import Image from 'next/image';
+import drinkImg from "./drink.jpg";
+import Image from "next/image";
 
 const SingleDrink = async ({ params }) => {
   const data = await getSingleDrink(params.id);
@@ -613,12 +613,12 @@ const SingleDrink = async ({ params }) => {
   const imgSrc = data?.drinks[0]?.strDrinkThumb;
   return (
     <div>
-      <Link href='/drinks' className='btn btn-primary mt-8 mb-12'>
+      <Link href="/drinks" className="btn btn-primary mt-8 mb-12">
         back to drinks
       </Link>
       {/* <img src={imgSrc} alt='' /> */}
-      <Image src={drinkImg} className='w-48 h-48 rounded' alt='' />
-      <h1 className='text-4xl mb-8'>{title}</h1>
+      <Image src={drinkImg} className="w-48 h-48 rounded" alt="" />
+      <h1 className="text-4xl mb-8">{title}</h1>
     </div>
   );
 };
@@ -646,7 +646,7 @@ const SingleDrink = async ({ params }) => {
   const imgSrc = data?.drinks[0]?.strDrinkThumb;
   return (
     <div>
-      <Link href='/drinks' className='btn btn-primary mt-8 mb-12'>
+      <Link href="/drinks" className="btn btn-primary mt-8 mb-12">
         back to drinks
       </Link>
       {/* <img src={imgSrc} alt='' /> */}
@@ -655,11 +655,11 @@ const SingleDrink = async ({ params }) => {
         src={imgSrc}
         width={300}
         height={300}
-        className='w-48 h-48 rounded shadow-lg mb-4'
+        className="w-48 h-48 rounded shadow-lg mb-4"
         priority
-        alt=''
+        alt=""
       />
-      <h1 className='text-4xl mb-8'>{title}</h1>
+      <h1 className="text-4xl mb-8">{title}</h1>
     </div>
   );
 };
@@ -692,25 +692,25 @@ module.exports = nextConfig;
   DrinksList.jsx
 
 ```js
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const DrinksList = ({ drinks }) => {
   return (
-    <ul className='grid sm:grid-cols-2 gap-6 mt-6'>
+    <ul className="grid sm:grid-cols-2 gap-6 mt-6">
       {drinks.map((drink) => (
         <li key={drink.idDrink}>
           <Link
             href={`/drinks/${drink.idDrink}`}
-            className='text-xl font-medium'
+            className="text-xl font-medium"
           >
-            <div className='relative h-48 mb-4'>
+            <div className="relative h-48 mb-4">
               <Image
                 src={drink.strDrinkThumb}
                 fill
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw'
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                 alt={drink.strDrink}
-                className='rounded-md object-cover'
+                className="rounded-md object-cover"
               />
             </div>
             {drink.strDrink}
@@ -790,7 +790,7 @@ datasource db {
 .env
 
 ```js
-DATABASE_URL = 'file:./dev.db';
+DATABASE_URL = "file:./dev.db";
 ```
 
 ## Setup Instance
@@ -868,17 +868,17 @@ In Prisma, the term "model" refers to an abstraction that maps to a table in you
 - fix the links the navbar
 
 ```js
-import prisma from '@/utils/db';
+import prisma from "@/utils/db";
 
 const prismaHandlers = async () => {
   await prisma.task.create({
     data: {
-      content: 'wake up',
+      content: "wake up",
     },
   });
   const allTasks = await prisma.task.findMany({
     orderBy: {
-      createdAt: 'desc',
+      createdAt: "desc",
     },
   });
 
@@ -889,10 +889,10 @@ const Prisma = async () => {
   const tasks = await prismaHandlers();
   return (
     <div>
-      <h1 className='text-3xl font-medium mb-4'>Prisma Example </h1>
+      <h1 className="text-3xl font-medium mb-4">Prisma Example </h1>
       {tasks.map((task) => {
         return (
-          <h2 key={task.id} className='text-xl py-2'>
+          <h2 key={task.id} className="text-xl py-2">
             😬 {task.content}
           </h2>
         );
@@ -912,7 +912,7 @@ export default Prisma;
 ```js
 const task = await prisma.task.create({
   data: {
-    content: 'some task',
+    content: "some task",
   },
 });
 ```
@@ -929,7 +929,7 @@ const tasks = await prisma.task.findMany();
 // By unique identifier
 const user = await prisma.user.findUnique({
   where: {
-    email: 'elsa@prisma.io',
+    email: "elsa@prisma.io",
   },
 });
 
@@ -949,7 +949,7 @@ const updateTask = await prisma.task.update({
     id: id,
   },
   data: {
-    content: 'updated task',
+    content: "updated task",
   },
 });
 ```
@@ -962,10 +962,10 @@ const upsertTask = await prisma.task.upsert({
     id: id,
   },
   update: {
-    content: 'some value',
+    content: "some value",
   },
   create: {
-    content: 'some value',
+    content: "some value",
   },
 });
 ```
@@ -992,12 +992,12 @@ const deleteTask = await prisma.task.delete({
 tasks/page.js
 
 ```js
-import TaskForm from '@/components/TaskForm';
-import TaskList from '@/components/TaskList';
+import TaskForm from "@/components/TaskForm";
+import TaskList from "@/components/TaskList";
 
 const TasksPage = () => {
   return (
-    <div className='max-w-lg'>
+    <div className="max-w-lg">
       <TaskForm />
       <TaskList />
     </div>
@@ -1009,34 +1009,34 @@ export default TasksPage;
 components/TaskList
 
 ```js
-import prisma from '@/utils/db';
-import Link from 'next/link';
-import DeleteForm from './DeleteForm';
+import prisma from "@/utils/db";
+import Link from "next/link";
+import DeleteForm from "./DeleteForm";
 
 const TaskList = async () => {
   const tasks = await prisma.task.findMany({
     orderBy: {
-      createdAt: 'desc',
+      createdAt: "desc",
     },
   });
   if (tasks.length === 0)
-    return <h2 className='mt-8 font-medium text-lg'>No tasks to show</h2>;
+    return <h2 className="mt-8 font-medium text-lg">No tasks to show</h2>;
   return (
-    <ul className='mt-8'>
+    <ul className="mt-8">
       {tasks.map((task) => (
         <li
           key={task.id}
-          className='flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg'
+          className="flex justify-between items-center px-6 py-4 mb-4 border border-base-300 rounded-lg shadow-lg"
         >
           <h2
             className={`text-lg capitalize ${
-              task.completed ? 'line-through' : null
+              task.completed ? "line-through" : null
             }`}
           >
             {task.content}
           </h2>
-          <div className='flex gap-6 items-center'>
-            <Link href={`/tasks/${task.id}`} className='btn btn-accent btn-xs'>
+          <div className="flex gap-6 items-center">
+            <Link href={`/tasks/${task.id}`} className="btn btn-accent btn-xs">
               edit
             </Link>
             <DeleteForm id={task.id} />
@@ -1070,7 +1070,7 @@ Rules :
 ```js
 export default function ServerComponent() {
   async function myAction(formData) {
-    'use server';
+    "use server";
     // access input values with formData
     // formData.get('name')
     // mutate data (server)
@@ -1087,7 +1087,7 @@ export default function ServerComponent() {
 utils/actions.js
 
 ```js
-'use server';
+"use server";
 
 export async function myAction() {
   // ...
@@ -1095,14 +1095,14 @@ export async function myAction() {
 ```
 
 ```js
-'use client';
+"use client";
 
-import { myAction } from './actions';
+import { myAction } from "./actions";
 
 export default function ClientComponent() {
   return (
     <form action={myAction}>
-      <button type='submit'>Add to Cart</button>
+      <button type="submit">Add to Cart</button>
     </form>
   );
 }
@@ -1111,12 +1111,12 @@ export default function ClientComponent() {
 ## TaskForm
 
 ```js
-import prisma from '@/utils/db';
-import { revalidatePath } from 'next/cache';
+import prisma from "@/utils/db";
+import { revalidatePath } from "next/cache";
 
 const createTask = async (formData) => {
-  'use server';
-  const content = formData.get('content');
+  "use server";
+  const content = formData.get("content");
   // some validation here
 
   await prisma.task.create({
@@ -1125,21 +1125,21 @@ const createTask = async (formData) => {
     },
   });
   // revalidate path
-  revalidatePath('/tasks');
+  revalidatePath("/tasks");
 };
 
 const TaskForm = () => {
   return (
     <form action={createTask}>
-      <div className='join w-full'>
+      <div className="join w-full">
         <input
-          className='input input-bordered join-item w-full'
-          placeholder='Type Here'
-          type='text'
-          name='content'
+          className="input input-bordered join-item w-full"
+          placeholder="Type Here"
+          type="text"
+          name="content"
           required
         />
-        <button type='submit' className='btn join-item btn-primary'>
+        <button type="submit" className="btn join-item btn-primary">
           create task
         </button>
       </div>
@@ -1156,21 +1156,21 @@ export default TaskForm;
 - refactor TaskForm and TaskList
 
 ```js
-'use server';
+"use server";
 
-import prisma from '@/utils/db';
-import { revalidatePath } from 'next/cache';
+import prisma from "@/utils/db";
+import { revalidatePath } from "next/cache";
 
 export const getAllTasks = async () => {
   return prisma.task.findMany({
     orderBy: {
-      createdAt: 'desc',
+      createdAt: "desc",
     },
   });
 };
 
 export const createTask = async (formData) => {
-  const content = formData.get('content');
+  const content = formData.get("content");
   // some validation here
 
   await prisma.task.create({
@@ -1179,7 +1179,7 @@ export const createTask = async (formData) => {
     },
   });
   // revalidate path
-  revalidatePath('/tasks');
+  revalidatePath("/tasks");
 };
 ```
 
@@ -1189,13 +1189,13 @@ export const createTask = async (formData) => {
 - invoke by using startTransition (useTransition hook)
 
 ```js
-import { deleteTask } from '@/utils/actions';
+import { deleteTask } from "@/utils/actions";
 
 const DeleteForm = ({ id }) => {
   return (
     <form action={deleteTask}>
-      <input type='hidden' name='id' value={id} />
-      <button className='btn btn-error btn-xs'>delete</button>
+      <input type="hidden" name="id" value={id} />
+      <button className="btn btn-error btn-xs">delete</button>
     </form>
   );
 };
@@ -1206,9 +1206,9 @@ utils/actions
 
 ```js
 export const deleteTask = async (formData) => {
-  const id = formData.get('id');
+  const id = formData.get("id");
   await prisma.task.delete({ where: { id } });
-  revalidatePath('/tasks');
+  revalidatePath("/tasks");
 };
 ```
 
@@ -1227,16 +1227,16 @@ export const deleteTask = async (formData) => {
 tasks/[id]/page.js
 
 ```js
-import EditForm from '@/components/EditForm';
-import { getTask } from '@/utils/actions';
-import Link from 'next/link';
+import EditForm from "@/components/EditForm";
+import { getTask } from "@/utils/actions";
+import Link from "next/link";
 const TaskPage = async ({ params }) => {
   const task = await getTask(params.id);
 
   return (
     <>
-      <div className='mb-16'>
-        <Link href='/tasks' className='btn btn-accent'>
+      <div className="mb-16">
+        <Link href="/tasks" className="btn btn-accent">
           Back to Tasks
         </Link>
       </div>
@@ -1259,9 +1259,9 @@ export const getTask = async (id) => {
 };
 
 export const editTask = async (formData) => {
-  const id = formData.get('id');
-  const content = formData.get('content');
-  const completed = formData.get('completed');
+  const id = formData.get("id");
+  const content = formData.get("content");
+  const completed = formData.get("completed");
 
   await prisma.task.update({
     where: {
@@ -1269,52 +1269,52 @@ export const editTask = async (formData) => {
     },
     data: {
       content: content,
-      completed: completed === 'on' ? true : false,
+      completed: completed === "on" ? true : false,
     },
   });
   // redirect won't works unless the component has 'use client'
   // another option, setup the editTask in the component directly
-  redirect('/tasks');
+  redirect("/tasks");
 };
 ```
 
 EditForm.js
 
 ```js
-'use client';
-import { editTask } from '@/utils/actions';
+"use client";
+import { editTask } from "@/utils/actions";
 
 const EditForm = ({ task }) => {
   const { id, completed, content } = task;
   return (
     <form
       action={editTask}
-      className='max-w-sm bg-base-100 p-12 border border-base-300  rounded-lg'
+      className="max-w-sm bg-base-100 p-12 border border-base-300  rounded-lg"
     >
-      <input type='hidden' name='id' value={id} />
+      <input type="hidden" name="id" value={id} />
       {/* content */}
 
       <input
-        type='text'
+        type="text"
         required
         defaultValue={content}
-        name='content'
-        className='input input-bordered w-full'
+        name="content"
+        className="input input-bordered w-full"
       />
 
       {/* completed */}
-      <div className='form-control my-4'>
-        <label className='label cursor-pointer'>
-          <span className='label-text'>Completed</span>
+      <div className="form-control my-4">
+        <label className="label cursor-pointer">
+          <span className="label-text">Completed</span>
           <input
-            type='checkbox'
+            type="checkbox"
             defaultChecked={completed}
-            name='completed'
-            className='checkbox checkbox-primary checkbox-sm'
+            name="completed"
+            className="checkbox checkbox-primary checkbox-sm"
           />
         </label>
       </div>
-      <button className='btn btn-primary btn-block btn-sm'>edit</button>
+      <button className="btn btn-primary btn-block btn-sm">edit</button>
     </form>
   );
 };
@@ -1334,10 +1334,10 @@ export default EditForm;
 TaskFormCustom
 
 ```js
-'use client';
+"use client";
 
-import { createTaskCustom } from '@/utils/actions';
-import { useFormStatus } from 'react-dom';
+import { createTaskCustom } from "@/utils/actions";
+import { useFormStatus } from "react-dom";
 // The useFormStatus Hook provides status information of the last form submission.
 // useFormState is a Hook that allows you to update state based on the result of a form action.
 
@@ -1346,11 +1346,11 @@ const SubmitButton = () => {
 
   return (
     <button
-      type='submit'
-      className='btn join-item btn-primary'
+      type="submit"
+      className="btn join-item btn-primary"
       disabled={pending}
     >
-      {pending ? 'please wait... ' : 'create task'}
+      {pending ? "please wait... " : "create task"}
     </button>
   );
 };
@@ -1358,12 +1358,12 @@ const SubmitButton = () => {
 const TaskForm = () => {
   return (
     <form action={createTaskCustom}>
-      <div className='join w-full'>
+      <div className="join w-full">
         <input
-          className='input input-bordered join-item w-full'
-          placeholder='Type Here'
-          type='text'
-          name='content'
+          className="input input-bordered join-item w-full"
+          placeholder="Type Here"
+          type="text"
+          name="content"
           required
         />
         <SubmitButton />
@@ -1377,7 +1377,7 @@ export default TaskForm;
 ```js
 export const createTaskCustom = async (formData) => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  const content = formData.get('content');
+  const content = formData.get("content");
   // some validation here
 
   await prisma.task.create({
@@ -1386,7 +1386,7 @@ export const createTaskCustom = async (formData) => {
     },
   });
   // revalidate path
-  revalidatePath('/tasks');
+  revalidatePath("/tasks");
 };
 ```
 
@@ -1395,10 +1395,10 @@ export const createTaskCustom = async (formData) => {
 TaskFormCustom.jsx
 
 ```js
-'use client';
+"use client";
 
-import { createTaskCustom } from '@/utils/actions';
-import { useFormStatus, useFormState } from 'react-dom';
+import { createTaskCustom } from "@/utils/actions";
+import { useFormStatus, useFormState } from "react-dom";
 // The useFormStatus Hook provides status information of the last form submission.
 // useFormState is a Hook that allows you to update state based on the result of a form action.
 
@@ -1407,11 +1407,11 @@ const SubmitButton = () => {
 
   return (
     <button
-      type='submit'
-      className='btn join-item btn-primary'
+      type="submit"
+      className="btn join-item btn-primary"
       disabled={pending}
     >
-      {pending ? 'please wait... ' : 'create task'}
+      {pending ? "please wait... " : "create task"}
     </button>
   );
 };
@@ -1425,13 +1425,13 @@ const TaskForm = () => {
 
   return (
     <form action={formAction}>
-      {state.message ? <p className='mb-2'>{state.message}</p> : null}
-      <div className='join w-full'>
+      {state.message ? <p className="mb-2">{state.message}</p> : null}
+      <div className="join w-full">
         <input
-          className='input input-bordered join-item w-full'
-          placeholder='Type Here'
-          type='text'
-          name='content'
+          className="input input-bordered join-item w-full"
+          placeholder="Type Here"
+          type="text"
+          name="content"
           required
         />
         <SubmitButton />
@@ -1448,7 +1448,7 @@ actions.js
 // fix params
 export const createTaskCustom = async (prevState, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  const content = formData.get('content');
+  const content = formData.get("content");
   // some validation here
   try {
     await prisma.task.create({
@@ -1457,11 +1457,11 @@ export const createTaskCustom = async (prevState, formData) => {
       },
     });
     // revalidate path
-    revalidatePath('/tasks');
-    return { message: 'success!!!' };
+    revalidatePath("/tasks");
+    return { message: "success!!!" };
   } catch (error) {
     // can't return error
-    return { message: 'error...' };
+    return { message: "error..." };
   }
 };
 ```
@@ -1482,11 +1482,11 @@ npm install zod
 actions.js
 
 ```js
-import { z } from 'zod';
+import { z } from "zod";
 
 export const createTaskCustom = async (prevState, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  const content = formData.get('content');
+  const content = formData.get("content");
 
   const Task = z.object({
     content: z.string().min(5),
@@ -1503,12 +1503,12 @@ export const createTaskCustom = async (prevState, formData) => {
       },
     });
     // revalidate path
-    revalidatePath('/tasks');
-    return { message: 'success!!!' };
+    revalidatePath("/tasks");
+    return { message: "success!!!" };
   } catch (error) {
     console.log(error);
     // can't return error
-    return { message: 'error...' };
+    return { message: "error..." };
   }
 };
 ```
@@ -1524,8 +1524,8 @@ npm install react-hot-toast
 - create providers.js file in app
 
 ```js
-'use client';
-import { Toaster } from 'react-hot-toast';
+"use client";
+import { Toaster } from "react-hot-toast";
 
 const Providers = ({ children }) => {
   return (
@@ -1541,14 +1541,14 @@ export default Providers;
 layout.js
 
 ```js
-import Providers from './providers';
+import Providers from "./providers";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main className='px-8 py-20 max-w-6xl mx-auto'>
+        <main className="px-8 py-20 max-w-6xl mx-auto">
           <Providers>{children}</Providers>
         </main>
       </body>
@@ -1561,10 +1561,10 @@ export default function RootLayout({ children }) {
 
 ```js
 try {
-  return { message: 'success' };
+  return { message: "success" };
 } catch (error) {
   console.log(error);
-  return { message: 'error' };
+  return { message: "error" };
 }
 ```
 
@@ -1573,21 +1573,21 @@ try {
 TaskFormCustom.jsx
 
 ```js
-'use client';
-import { createTaskCustom } from '@/utils/actions';
-import { useEffect } from 'react';
+"use client";
+import { createTaskCustom } from "@/utils/actions";
+import { useEffect } from "react";
 
-import { useFormStatus, useFormState } from 'react-dom';
-import toast from 'react-hot-toast';
+import { useFormStatus, useFormState } from "react-dom";
+import toast from "react-hot-toast";
 const SubmitBtn = () => {
   const { pending } = useFormStatus();
   return (
     <button
-      type='submit'
-      className='btn btn-primary join-item'
+      type="submit"
+      className="btn btn-primary join-item"
       disabled={pending}
     >
-      {pending ? 'please wait...' : 'create task'}
+      {pending ? "please wait..." : "create task"}
     </button>
   );
 };
@@ -1600,23 +1600,23 @@ const TaskForm = () => {
   const [state, formAction] = useFormState(createTaskCustom, initialState);
 
   useEffect(() => {
-    if (state.message === 'error') {
-      toast.error('there was an error');
+    if (state.message === "error") {
+      toast.error("there was an error");
       return;
     }
     if (state.message) {
-      toast.success('task created....');
+      toast.success("task created....");
     }
   }, [state]);
 
   return (
     <form action={formAction}>
-      <div className='join w-full'>
+      <div className="join w-full">
         <input
-          type='text '
-          className='input input-bordered join-item w-full'
-          placeholder='type here'
-          name='content'
+          type="text "
+          className="input input-bordered join-item w-full"
+          placeholder="type here"
+          name="content"
           required
         />
         <SubmitBtn />
@@ -1632,15 +1632,15 @@ export default TaskForm;
 DeleteForm.jsx
 
 ```js
-'use client';
-import { useFormStatus } from 'react-dom';
-import { deleteTask } from '@/utils/actions';
+"use client";
+import { useFormStatus } from "react-dom";
+import { deleteTask } from "@/utils/actions";
 
 const SubmitBtn = () => {
   const { pending } = useFormStatus();
   return (
-    <button type='submit' className='btn btn-xs btn-error' disabled={pending}>
-      {pending ? 'pending...' : 'delete'}
+    <button type="submit" className="btn btn-xs btn-error" disabled={pending}>
+      {pending ? "pending..." : "delete"}
     </button>
   );
 };
@@ -1648,7 +1648,7 @@ const SubmitBtn = () => {
 const DeleteForm = ({ id }) => {
   return (
     <form action={deleteTask}>
-      <input type='hidden' name='id' value={id} />
+      <input type="hidden" name="id" value={id} />
       <SubmitBtn />
     </form>
   );
@@ -1674,8 +1674,8 @@ app/api/tasks/route.js
 ```js
 // the following HTTP methods are supported: GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS. If an unsupported method is called, Next.js will return a 405 Method Not Allowed response.
 
-import { NextResponse } from 'next/server';
-import db from '@/utils/db';
+import { NextResponse } from "next/server";
+import db from "@/utils/db";
 
 export const GET = async (request) => {
   const tasks = await db.task.findMany();
@@ -1705,25 +1705,25 @@ Middleware in Next.js is a piece of code that allows you to perform actions befo
 
 ```js
 export function middleware(request) {
-  return Response.json({ msg: 'hello there' });
+  return Response.json({ msg: "hello there" });
 }
 
 export const config = {
-  matcher: '/about',
+  matcher: "/about",
 };
 ```
 
 ```js
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request) {
-  return NextResponse.redirect(new URL('/', request.url));
+  return NextResponse.redirect(new URL("/", request.url));
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/about/:path*', '/tasks/:path*'],
+  matcher: ["/about/:path*", "/tasks/:path*"],
 };
 ```
 
@@ -1761,10 +1761,10 @@ package.json
 - prisma-example
 
 ```js
-import prisma from '@/utils/db';
+import prisma from "@/utils/db";
 
 const prismaHandlers = async () => {
-  console.log('prisma example');
+  console.log("prisma example");
   // await prisma.task.create({
   //   data: {
   //     content: 'wake up',
@@ -1776,15 +1776,15 @@ const prismaHandlers = async () => {
 const PrismaExample = async () => {
   const tasks = await prismaHandlers();
   if (tasks.length === 0) {
-    return <h2 className='mt-8 font-medium text-lg'>No tasks to show...</h2>;
+    return <h2 className="mt-8 font-medium text-lg">No tasks to show...</h2>;
   }
 
   return (
     <div>
-      <h1 className='text-7xl'>PrismaExample</h1>
+      <h1 className="text-7xl">PrismaExample</h1>
       {tasks.map((task) => {
         return (
-          <h2 key={task.id} className='text-xl py-2'>
+          <h2 key={task.id} className="text-xl py-2">
             😬 {task.content}
           </h2>
         );
@@ -1812,7 +1812,7 @@ npm start
 tasks.js
 
 ```js
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 ```
 
 ## Deploy
